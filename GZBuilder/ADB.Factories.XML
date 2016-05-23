@@ -1,0 +1,1632 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ADB.Factories</name>
+    </assembly>
+    <members>
+        <member name="F:ADB.Factories.BuildProgress.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.BuildProgress.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ADB.Factories.BuildProgress.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:ADB.Factories.CHMDocumentBuilderFactory">
+            <summary>
+            表示一个生成CHM文档的文档生成器的基类
+            </summary>
+            <remarks>
+            CHMDocumentBuilderFactory是一个抽象类，其责职是将CreateNamespacePage（生成命名空间文档页面），CreateTypePage（生成类型如类，接口等的页面）和CreateMemberPage（生成类型成员如方法，属性等的页面）生成的页面编译为CHM文档，<span style="color: #ff0000">因此，当你想编写一个具有个性化风格样式（比如MSDN2008样式）的文档时，只需继承此类并重写CreateNamespacePage，CreateTypePage和CreateMemberPage三个方法即可，而不需要关心编译CHM的细节。</span>
+            </remarks>
+        </member>
+        <member name="P:ADB.Factories.CHMDocumentBuilderFactory.TargetEncoding">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.CHMDocumentBuilderFactory.HHCPath">
+            <summary>
+            HHC路径
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.#ctor(ADB.Factories.IGetData,ADB.Factories.IInteract)">
+            <summary>
+            初始化CHMDocumentBuilderFactory实例
+            </summary>
+            <param name="data"></param>
+            <param name="interact"></param>
+        </member>
+        <member name="P:ADB.Factories.CHMDocumentBuilderFactory.Target">
+            <summary>
+            目标文件路径
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.CHMDocumentBuilderFactory.Title">
+            <summary>
+            文档标题
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.CHMDocumentBuilderFactory.IsCanceled">
+            <summary>
+            是否已经取消
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.CHMDocumentBuilderFactory.IsFinish">
+            <summary>
+            是否已完成
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.Cancel">
+            <summary>
+            取消生成过程
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.WaitForExit">
+            <summary>
+            等待直到完成或取消
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.Build(System.String,System.String)">
+            <summary>
+            生成文档
+            </summary>
+            <param name="title">文档标题</param>
+            <param name="target">文档文件路径</param>
+        </member>
+        <member name="P:ADB.Factories.CHMDocumentBuilderFactory.Filter">
+            <summary>
+            获取文件名筛选器字符串，该字符串决定对话框的“另存为文件类型”框中出现的选择内容。
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.CreateContentTree">
+            <summary>
+            创建目录树，并确定命名空间，类型，成员对应的页面的文件名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.GetFileName(System.String)">
+            <summary>
+            获取类型或成员的页面文件的文件名
+            </summary>
+            <param name="id"></param>
+            <returns>指定类型或成员的页面文件的文件名</returns>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.GetNamespaceFileName(System.String)">
+            <summary>
+            获取命名空间对应的页面文件的文件名
+            </summary>
+            <param name="name"></param>
+            <returns>指定命名空间对应的页面文件的文件名</returns>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.GetAllNamespaces">
+            <summary>
+            获取所有的命名空间的名称
+            </summary>
+            <returns>所有的命名空间的名称</returns>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.CreateNamespacePage(ADB.Factories.IGetTypes,ADB.Factories.ContentTreeItem)">
+            <summary>
+            生成命名空间页面
+            </summary>
+            <param name="typeItems">命名空间中的所有类型</param>
+            <param name="ns">命名空间包含信息（名称，页面文件名等）</param>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.CreateTypePage(ADB.Factories.IGetMembers,ADB.Factories.ContentTreeItem)">
+            <summary>
+            生成类型页面
+            </summary>
+            <param name="memberItems">该类型包含的所有成员</param>
+            <param name="type">类型包含信息（名称，页面文件名等）</param>
+        </member>
+        <member name="M:ADB.Factories.CHMDocumentBuilderFactory.CreateMemberPage(ADB.Factories.ContentTreeItem)">
+            <summary>
+            创建成员页面
+            </summary>
+            <param name="member">成员的信息</param>
+        </member>
+        <member name="P:ADB.Factories.CHMDocumentBuilderFactory.RelativeHtmlFilePath">
+            <summary>
+            存放页面的目录路径（相对于CHM文件所在的目录）
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.CHMDocumentBuilderFactory.OptionDialog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADB.Factories.ContentTreeItem">
+            <summary>
+            目录树中的项，用于在存储命名空间，类型，类型成员的信息
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.ContentTreeItem.#ctor(System.String,System.String)">
+            <summary>
+            初始化ContentTreeItem实例
+            </summary>
+            <param name="name">名称</param>
+            <param name="fileName">对应页面的文件名</param>
+        </member>
+        <member name="M:ADB.Factories.ContentTreeItem.#ctor(System.String,System.String,System.Reflection.MemberInfo)">
+            <summary>
+            初始化ContentTreeItem实例
+            </summary>
+            <param name="name">名称</param>
+            <param name="fileName">对应页面的文件名</param>
+            <param name="info">项对应的成员或类型的信息</param>
+        </member>
+        <member name="P:ADB.Factories.ContentTreeItem.Parent">
+            <summary>
+            项在目录树中的父项
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.ContentTreeItem.Tag">
+            <summary>
+            与该项相关联的附加数据
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.ContentTreeItem.Info">
+            <summary>
+            成员信息
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.ContentTreeItem.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.ContentTreeItem.FileName">
+            <summary>
+            对应的页面文件的文件名
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.ContentTreeItem.GetSubItemsCollection">
+            <summary>
+            获取一个枚举子项的接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ADB.Factories.ContentTreeItem.Add(ADB.Factories.ContentTreeItem)">
+            <summary>
+            添加一个子项
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:ADB.Factories.ContentTreeItem.Sort">
+            <summary>
+            对子项排序
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.ContentTreeItem.Count">
+            <summary>
+            包含的子项的数目
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.ContentTreeItem.GetAllSubItem">
+            <summary>
+            将所有子项拷贝到一个数组
+            </summary>
+            <returns>包含所有子项的数组</returns>
+        </member>
+        <member name="M:ADB.Factories.ContentTreeItem.Find(System.String)">
+            <summary>
+            查找名称为name的子项
+            </summary>
+            <param name="name">要查找的子项的名称</param>
+            <returns>名称为name的子项</returns>
+        </member>
+        <member name="T:ADB.Factories.IGetTypes">
+            <summary>
+            提供一个获取按类别获取命名空间包含的类型的接口
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.IGetTypes.GetMembers(System.String)">
+            <summary>
+            获取某一类别的成员，如GetMembers("PublicMethod")获取所有公共方法，对应关系如下:
+            Class       类
+            Structure   结构
+            Enumeration 枚举
+            Delegate    委托
+            Interface   接口
+            </summary>
+            <param name="category">类别名</param>
+            <returns>属于指定类别的所有成员</returns>
+        </member>
+        <member name="M:ADB.Factories.IGetTypes.GetAllCategory">
+            <summary>
+            获取包含的所有类别
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ADB.Factories.IGetMembers">
+            <summary>
+            提供一个获取按类别获取类型成员的接口
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.IGetMembers.GetMembers(System.String)">
+            <summary>
+            获取某一类别的成员，如GetMembers("PublicMethod")获取所有公共方法，对应关系如下:
+            Constructor       构造方法
+            PublicMethod      公共方法
+            ProtectedMethod   受保护方法
+            PrivateMethod     私有方法
+            PublicProperty    公共属性
+            ProtectedProperty 受保护属性
+            PrivateProperty   私有方法
+            PublicField       公共字段
+            ProtectedField    受保护字段
+            PrivateField      私有字段
+            Event             事件
+            </summary>
+            <param name="category">类别名</param>
+            <returns>属于指定类别的所有成员</returns>
+        </member>
+        <member name="M:ADB.Factories.IGetMembers.GetAllCategory">
+            <summary>
+            获取包含的所有类别
+            </summary>
+            <returns>包含的所有类别</returns>
+        </member>
+        <member name="T:ADB.Factories.DocumentBuilder">
+            <summary>
+            表示文档生成器的类
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.DocumentBuilder.DataProvider">
+            <summary>
+            获取一个IGetData接口，用于获取生成文档所需的数据（如：程序集的成员及其XML注释）
+            </summary>
+            <value>IGetData接口，用于获取生成文档所需的数据（如：程序集的成员及其XML注释）</value>
+        </member>
+        <member name="P:ADB.Factories.DocumentBuilder.Interact">
+            <summary>
+            获取一个IInteract接口，用于同文档生成程序主窗口进行交互
+            </summary>
+            <value>一个IInteract接口，用于同文档生成程序主窗口进行交互</value>
+        </member>
+        <member name="M:ADB.Factories.DocumentBuilder.#ctor(ADB.Factories.IGetData,ADB.Factories.IInteract)">
+            <summary>
+            初始化DocumentBuilder实例
+            </summary>
+            <param name="data">一个IGetData接口，用于获取生成文档所需的数据（如：程序集的成员及其XML注释）</param>
+            <param name="interact">一个IInteract接口，用于同文档生成程序主窗口进行交互</param>
+        </member>
+        <member name="P:ADB.Factories.DocumentBuilder.OptionDialog">
+            <summary>
+            获取一个IWin32Window接口，用于显示选项窗口
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.DocumentBuilder.Build(System.String,System.String)">
+            <summary>
+            生成文档
+            </summary>
+            <param name="title">文档标题</param>
+            <param name="target">输出文件路径</param>
+        </member>
+        <member name="P:ADB.Factories.DocumentBuilder.Filter">
+            <summary>
+            获取文件名筛选器字符串，该字符串决定对话框的“另存为文件类型”框中出现的选择内容。
+            </summary>
+            <value>当前文件名筛选器字符串，该字符串决定对话框的“另存为文件类型”框中出现的选择内容。</value>
+        </member>
+        <member name="T:ADB.Factories.DocumentBuilderMember">
+            <summary>
+            表示程序集中的成员（类、结构、事件，方法等）的信息
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.DocumentBuilderMember.#ctor(System.Boolean,System.Reflection.MemberInfo)">
+            <summary>
+            初始化DocumentBuilderMember实例
+            </summary>
+            <param name="state">该成员是否选中</param>
+            <param name="memInfo">成员信息</param>
+        </member>
+        <member name="P:ADB.Factories.DocumentBuilderMember.Selected">
+            <summary>
+            获取一个值，通过该值指示该成员是否选中
+            </summary>
+            <value>如果选中，则为true，否则，为false</value>
+        </member>
+        <member name="P:ADB.Factories.DocumentBuilderMember.MemberInfo">
+            <summary>
+            获取程序集中的成员（类、结构、事件，方法等）的信息
+            </summary>
+            <value>成员的信息</value>
+        </member>
+        <member name="T:ADB.Factories.IGetData">
+            <summary>
+            获取成员及其XML注释
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.IGetData.GetTypes">
+            <summary>
+            已选中的类型
+            </summary>
+            <returns>程序集包含的类型的信息</returns>
+        </member>
+        <member name="M:ADB.Factories.IGetData.GetSelectedTypes">
+            <summary>
+            获取程序集包含的类型
+            </summary>
+            <returns>程序集包含的类型的信息</returns>
+        </member>
+        <member name="M:ADB.Factories.IGetData.GetTypeMembers(System.Type)">
+            <summary>
+            获取指定的类型包含的所有成员
+            </summary>
+            <param name="type">将要获取成员的类型</param>
+            <returns>指定的类型包含的所有成员的信息</returns>
+        </member>
+        <member name="M:ADB.Factories.IGetData.GetTypeSelectedMembers(System.Type)">
+            <summary>
+            获取指定的类型包含的并且已选中的所有成员
+            </summary>
+            <param name="type">将要获取成员的类型</param>
+            <returns>指定的类型包含的所有成员的信息</returns>
+        </member>
+        <member name="M:ADB.Factories.IGetData.GetMemberXmlNode(System.Reflection.MemberInfo)">
+            <summary>
+            获取指定成员对应的XML注释
+            </summary>
+            <param name="memInfo">要获取注释的成员</param>
+            <returns>指定成员对应的XML注释</returns>
+        </member>
+        <member name="T:ADB.Factories.IInteract">
+            <summary>
+            公开一个同文档生成程序主界面交互（如：显示进度）的方法
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.IInteract.Invoke(System.Delegate)">
+            <summary>
+            在主窗口句柄的线程上执行指定委托。
+            </summary>
+            <param name="method">包含要在控件的线程上下文中调用的方法的委托。</param>
+        </member>
+        <member name="M:ADB.Factories.IInteract.Invoke(System.Delegate,System.Object[])">
+            <summary>
+            在拥有主窗口句柄的线程上，用指定的参数列表执行指定的委托。
+            </summary>
+            <param name="method">包含要在控件的线程上下文中调用的方法的委托。</param>
+            <param name="args">作为指定方法的参数传递的对象数组。如果此方法没有参数，该参数可以是空引用</param>
+        </member>
+        <member name="M:ADB.Factories.IInteract.BeginInvoke(System.Delegate)">
+            <summary>
+            在创建控件的基础句柄所在线程上异步执行指定委托。
+            </summary>
+            <param name="method">对不带参数的方法的委托。</param>
+            <returns>一个表示 BeginInvoke 操作的结果的 IAsyncResult。</returns>
+        </member>
+        <member name="M:ADB.Factories.IInteract.BeginInvoke(System.Delegate,System.Object[])">
+            <summary>
+            在创建控件的基础句柄所在线程上，用指定的参数异步执行指定委托。
+            </summary>
+            <param name="method">一个方法委托，它采用的参数的数量和类型与 args 参数中所包含的相同。</param>
+            <param name="args">作为给定方法的参数传递的对象数组。如果不需要参数，则可以为空引用</param>
+            <returns>一个表示 BeginInvoke 操作的结果的 IAsyncResult。</returns>
+        </member>
+        <member name="P:ADB.Factories.IInteract.MainForm">
+            <summary>
+            获取文档生成程序的主窗口
+            </summary>
+            <value>文档生成程序的主窗口</value>
+        </member>
+        <member name="T:ADB.Factories.MemberXmlElement">
+            <summary>
+            表示成员的XML注释及其他相关信息
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.MemberXmlElement.OwnerDirectory">
+            <summary>
+            获取该成员XML注释所在的XML文档文件的目录
+            </summary>
+            <value>该成员XML注释所在的XML文档文件的目录</value>
+        </member>
+        <member name="P:ADB.Factories.MemberXmlElement.Owner">
+            <summary>
+            获取该成员XML注释所在的XML文档文件
+            </summary>
+            <value>该成员XML注释所在的XML文档文件</value>
+        </member>
+        <member name="P:ADB.Factories.MemberXmlElement.Data">
+            <summary>
+            获取该成员XML注释
+            </summary>
+            <value>该成员XML注释</value>
+        </member>
+        <member name="M:ADB.Factories.MemberXmlElement.#ctor(System.String,System.Xml.XmlElement)">
+            <summary>
+            初始化MemberXmlElement实例
+            </summary>
+            <param name="owner">该成员XML注释所在的XML文档文件</param>
+            <param name="data">该成员XML注释</param>
+        </member>
+        <member name="T:ADB.Factories.DocumentBuilderUtility">
+            <summary>
+            提供一些与文档生成相关的方法
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.DocumentBuilderUtility.GetMemberID(System.Reflection.MemberInfo)">
+            <summary>
+            获取指定对象在XML文档注释中的ID字符串
+            </summary>
+            <param name="info">要获取ID字符串的对象</param>
+            <returns>指定对象在XML文档注释中的ID字符串</returns>
+        </member>
+        <member name="M:ADB.Factories.DocumentBuilderUtility.GetTypeDefinition(System.Type)">
+            <summary>
+            获取一个类型的定义
+            </summary>
+            <param name="type">要获取定义的类型</param>
+            <returns>指定类型的定义</returns>
+        </member>
+        <member name="M:ADB.Factories.DocumentBuilderUtility.GetTypeDefinition(System.Type,System.Boolean)">
+            <summary>
+            获取一个类型的定义
+            </summary>
+            <param name="type">要获取定义的类型</param>
+            <param name="fullName">是否使用全称</param>
+            <returns>指定类型的定义</returns>
+        </member>
+        <member name="F:ADB.Factories.GetHHCPathDialog.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.GetHHCPathDialog.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ADB.Factories.GetHHCPathDialog.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.CHM_OptionDialog.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.CHM_OptionDialog.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ADB.Factories.CHM_OptionDialog.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:ADB.Factories.MSDNStyleCHMDocumentBuilder">
+            <summary>
+            表示一个生成MSDN2005样式的CHM文档的文档生成器的类
+            </summary>
+            <remarks>
+            MSDNStyleCHMDocumentBuilder继承于CHMDocumentBuilderFactory，并重写了CreateNamespacePage，CreateTypePage和CreateMemberPage以生成MSDN2005样式的文档页面，MSDNStyleCHMDocumentBuilder的GetTag方法为虚函数，<span style="color: #ff0000">如果要扩展注释标志，只需继承该类，并重写GetTag方法即可。</span>
+            </remarks>
+            <example>
+            以下例子通过继承MSDNStyleCHMDocumentBuilder并重写GetTag扩展&lt;image&gt;标志
+            
+            <file src="files\DemoCustomBuilder.rar">工程文件</file>
+            
+            <code language="C#" src="codes\DemoCustomBuilder.cs"/>
+            </example>
+        </member>
+        <member name="P:ADB.Factories.MSDNStyleCHMDocumentBuilder.AssemblyBasePath">
+            <summary>
+            程序集所在的路径
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.MSDNStyleCHMDocumentBuilder.HtmlTempDirectory">
+            <summary>
+            获取存放页面模板的文件夹的路径
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.MSDNStyleCHMDocumentBuilder.#ctor(ADB.Factories.IGetData,ADB.Factories.IInteract)">
+            <summary>
+            初始化MSDNStyleCHMDocumentBuilder
+            </summary>
+            <param name="data">用于获取成员及其XML注释的接口</param>
+            <param name="interact">用于与主界面交互的接口</param>
+        </member>
+        <member name="P:ADB.Factories.MSDNStyleCHMDocumentBuilder.HtmlFileDirectory">
+            <summary>
+            保存页面文件的文件夹的路径
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.MSDNStyleCHMDocumentBuilder.Build(System.String,System.String)">
+            <summary>
+            生成文档
+            </summary>
+            <param name="title">文档的标题</param>
+            <param name="target">文档的路径</param>
+        </member>
+        <member name="M:ADB.Factories.MSDNStyleCHMDocumentBuilder.CreateNamespacePage(ADB.Factories.IGetTypes,ADB.Factories.ContentTreeItem)">
+            <summary>
+            生成命名空间页面
+            </summary>
+            <param name="typeItems">命名空间中的所有类型</param>
+            <param name="ns">命名空间包含信息（名称，页面文件名等）</param>
+        </member>
+        <member name="M:ADB.Factories.MSDNStyleCHMDocumentBuilder.CreateTypePage(ADB.Factories.IGetMembers,ADB.Factories.ContentTreeItem)">
+            <summary>
+            生成类型页面
+            </summary>
+            <param name="memberItems">该类型包含的所有成员</param>
+            <param name="typeItem">类型包含信息（名称，页面文件名等）</param>
+        </member>
+        <member name="M:ADB.Factories.MSDNStyleCHMDocumentBuilder.CreateMemberPage(ADB.Factories.ContentTreeItem)">
+            <summary>
+            创建成员页面
+            </summary>
+            <param name="memberItem">成员的信息</param>
+        </member>
+        <member name="M:ADB.Factories.MSDNStyleCHMDocumentBuilder.GetInnerTags(System.Xml.XmlElement,System.String)">
+            <summary>
+            将XML注释所有子级转换成HTML
+            </summary>
+            <param name="node">指定的XML注释</param>
+            <param name="xmlFile">elem所在的xml文件的路径</param>
+            <returns>所有子级的html</returns>
+        </member>
+        <member name="M:ADB.Factories.MSDNStyleCHMDocumentBuilder.GetElementBeginTag(System.Xml.XmlElement)">
+            <summary>
+            获取XML元素的开始标志
+            </summary>
+            <param name="elem">要获取开始标志的XML元素</param>
+            <returns>一个表示XML元素开始标志的字符串</returns>
+        </member>
+        <member name="M:ADB.Factories.MSDNStyleCHMDocumentBuilder.GetElementEndTag(System.Xml.XmlElement)">
+            <summary>
+            获取XML元素的结束标志
+            </summary>
+            <param name="elem">要获取结束标志的XML元素</param>
+            <returns>一个表示XML元素结束标志的字符串</returns>
+        </member>
+        <member name="M:ADB.Factories.MSDNStyleCHMDocumentBuilder.GetTag(System.Xml.XmlElement,System.String)">
+            <summary>
+            将XML注释转换成页面上的HTML代码，继承类可以重写此方法已扩展XML注释标志
+            </summary>
+            <param name="elem">要转成HTML的XML元素</param>
+            <param name="xmlFile">elem所在的XML文件的路径</param>
+            <returns>XML注释对应的的HTML代码</returns>
+        </member>
+        <member name="P:ADB.Factories.MSDNStyleCHMDocumentBuilder.TypePageSections">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.MSDNStyleCHMDocumentBuilder.MemberPageSections">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADB.Factories.PageSectionType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.Summary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.Remarks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.Exception">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.Syntax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.Example">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.Constructor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.PublicMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.PrivateMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.ProtectedMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.PublicProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.PrivateProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.ProtectedProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.PublicField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.PrivateField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.ProtectedField">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.Event">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ADB.Factories.PageSectionType.FromXML">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ADB.Factories.PageSection">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.PageSection.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.PageSection.SectionType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.PageSection.XmlSource">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.PageSection.#ctor(System.String,ADB.Factories.PageSectionType,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="sectionType"></param>
+            <param name="xmlSource"></param>
+        </member>
+        <member name="T:ADB.Factories.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.E">
+            <summary>
+              查找类似 E_ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.Extension">
+            <summary>
+              查找类似 .html 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.F">
+            <summary>
+              查找类似 F_ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.M">
+            <summary>
+              查找类似 M_ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.P">
+            <summary>
+              查找类似 P_ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strAlterDoc">
+            <summary>
+              查找类似 修改文档.html 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strCanceled">
+            <summary>
+              查找类似 生成已取消！ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strClass">
+            <summary>
+              查找类似 类 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strCollapseAll">
+            <summary>
+              查找类似 全部折叠 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strConstructor">
+            <summary>
+              查找类似 构造函数 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strDefault">
+            <summary>
+              查找类似 CHM文档(默认) 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strDelegate">
+            <summary>
+              查找类似 委托 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strDesc">
+            <summary>
+              查找类似 说明 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strEnumeration">
+            <summary>
+              查找类似 枚举 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strError">
+            <summary>
+              查找类似 错误 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strEvent">
+            <summary>
+              查找类似 事件 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strExpandAll">
+            <summary>
+              查找类似 全部展开 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strField">
+            <summary>
+              查找类似 字段 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strHTMLOnly">
+             <summary>
+               查找类似 没有生成CHM文件，HTML页面文件和CHM工程文件已保存到
+            {0}中！ 的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strIndex">
+            <summary>
+              查找类似 Index 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String">
+            <summary>
+              查找类似 Templates 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String01">
+            <summary>
+              查找类似 公共类型 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String02">
+            <summary>
+              查找类似 非公共类型 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String03">
+            <summary>
+              查找类似 类型 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String04">
+            <summary>
+              查找类似 继承的成员 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String05">
+            <summary>
+              查找类似 成员 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String1">
+            <summary>
+              查找类似 另一个Build操作正在进行 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String16">
+            <summary>
+              查找类似 程序集 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String17">
+            <summary>
+              查找类似 程序集(*.dll,*.exe)|*.dll;*.exe 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String18">
+            <summary>
+              查找类似 XML文件(*.xml)|*.xml 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String19">
+            <summary>
+              查找类似 确定要删除程序集 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String20">
+            <summary>
+              查找类似 提示 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String21">
+            <summary>
+              查找类似 所有程序集 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String22">
+            <summary>
+              查找类似 所有类型 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String23">
+            <summary>
+              查找类似 文档生成 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String24">
+            <summary>
+              查找类似 快速选择 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String25">
+            <summary>
+              查找类似 删除 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String26">
+            <summary>
+              查找类似 添加 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String27">
+            <summary>
+              查找类似 删除 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String28">
+            <summary>
+              查找类似 添加 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String29">
+            <summary>
+              查找类似 标题 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String30">
+            <summary>
+              查找类似 生成类型 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String31">
+            <summary>
+              查找类似 默认 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String32">
+            <summary>
+              查找类似 程序集 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String33">
+            <summary>
+              查找类似 XML文档 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String34">
+            <summary>
+              查找类似 生成文档 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String35">
+            <summary>
+              查找类似 确定 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String36">
+            <summary>
+              查找类似 快速选择 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String42">
+            <summary>
+              查找类似 备注 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String43">
+            <summary>
+              查找类似 示例 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String44">
+            <summary>
+              查找类似 语法 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String45">
+            <summary>
+              查找类似 异常 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String46">
+            <summary>
+              查找类似 参数 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String47">
+            <summary>
+              查找类似 返回值 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String48">
+            <summary>
+              查找类似 属性值 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String49">
+            <summary>
+              查找类似 重启后生效！ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String50">
+            <summary>
+              查找类似 是否打开文件？ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String51">
+            <summary>
+              查找类似 请输入标题？ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String52">
+            <summary>
+              查找类似 程序集已添加！ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String53">
+            <summary>
+              查找类似 XML文件已添加！ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String55">
+            <summary>
+              查找类似 你确定要取消？ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.String56">
+            <summary>
+              查找类似 (从{0}继承) 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strInterface">
+            <summary>
+              查找类似 接口 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strMethod">
+            <summary>
+              查找类似 方法 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strNamespace">
+            <summary>
+              查找类似 命名空间 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strNoCHM">
+            <summary>
+              查找类似 不编译CHM文件 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strPic">
+            <summary>
+              查找类似 图片 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strPrivateField">
+            <summary>
+              查找类似 私有字段 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strPrivateMethod">
+            <summary>
+              查找类似 私有方法 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strPrivateProperty">
+            <summary>
+              查找类似 私有属性 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strProperty">
+            <summary>
+              查找类似 属性 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strProtectedField">
+            <summary>
+              查找类似 受保护字段 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strProtectedMethod">
+            <summary>
+              查找类似 受保护方法 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strProtectedProperty">
+            <summary>
+              查找类似 受保护属性 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strPublicField">
+            <summary>
+              查找类似 公共字段 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strPublicMethod">
+            <summary>
+              查找类似 公共方法 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strPublicProperty">
+            <summary>
+              查找类似 公共属性 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strStructure">
+            <summary>
+              查找类似 结构 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strTip">
+            <summary>
+              查找类似 提示 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.strTip1">
+            <summary>
+              查找类似 请输入路径！ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Properties.Resources.T">
+            <summary>
+              查找类似 T_ 的本地化字符串。
+            </summary>
+        </member>
+        <member name="T:ADB.Factories.Templates">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.EditIndex">
+             <summary>
+               查找类似 &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+            &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+            &lt;head&gt;
+                &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&gt;
+                &lt;title&gt;{0}&lt;/title&gt;
+                &lt;style type=&quot;text/css&quot;&gt;
+                p
+                {
+                text-indent: 2pc;
+                font-family: &apos;Times New Roman&apos;;
+                }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div&gt;
+                    &lt;p&gt;
+                        .NET�ĵ��������Ѿ�Ϊ������CHM�ĵ����ĵ�������ҳ�漰���CHM�ĵ���Ҫ��HH [字符串的其余部分被截断]&quot;; 的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.EditIndex_NS">
+            <summary>
+              查找类似         &lt;p &gt;&lt;a href=&quot;{HREF}&quot; target=&quot;_blank&quot;&gt;{Name}&lt;/a&gt;&lt;/p&gt; 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.HHC">
+             <summary>
+               查找类似 &lt;HTML&gt;&lt;HEAD&gt;&lt;/HEAD&gt;&lt;BODY&gt;
+            &lt;OBJECT type=&quot;text/site properties&quot;&gt;&lt;param name=&quot;Window Styles&quot; value=&quot;0x227&quot;&gt;&lt;/OBJECT&gt;
+            &lt;UL&gt;{目录项}
+            &lt;/UL&gt;
+            &lt;/BODY&gt;&lt;/HTML&gt;
+             的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.HHP">
+             <summary>
+               查找类似 [OPTIONS]
+            Compatibility=1.1 Or later
+            Compiled file={CHM文件}
+            Default window=Main
+            Default topic={默认}
+            Contents file={HHC}
+            Display compile progress=Yes
+            Full-text search=Yes
+            
+            [WINDOWS]
+            Main=&quot;{标题}&quot;,&quot;{HHC}&quot;,,&quot;{默认}&quot;,&quot;{主页}&quot;,,,,,0x420,0xB4,0x10304E,[80,60,720,540],0x0,0x0,,,,,0
+            
+            [FILES]{Files} 的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.HHP_NoIndex">
+             <summary>
+               查找类似 [OPTIONS]
+            Compatibility=1.1 Or later
+            Compiled file={CHM文件}
+            Default window=Main
+            Default font=宋体,9,1
+            Contents file={HHC}
+            Display compile progress=Yes
+            Full-text search=Yes
+            Language=0X804 中文(中国)
+            
+            [WINDOWS]
+            Main=&quot;{标题}&quot;,&quot;{HHC}&quot;,,,,,,,,0x420,0xB4,0x10300E,[80,60,720,540],0x0,0x0,,,,,0
+            
+            [FILES]{Files} 的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.LI">
+             <summary>
+               查找类似 &lt;LI&gt;&lt;OBJECT TYPE=&quot;text/sitemap&quot;&gt;
+            &lt;PARAM NAME=&quot;Name&quot; VALUE=&quot;{名称}&quot;&gt;
+            &lt;PARAM NAME=&quot;ImageNumber&quot; value=&quot;{图标}&quot;&gt;
+            &lt;/OBJECT&gt; 的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.LI_Link">
+             <summary>
+               查找类似 
+            &lt;LI&gt;&lt;OBJECT TYPE=&quot;text/sitemap&quot;&gt;
+            &lt;PARAM NAME=&quot;Name&quot; VALUE=&quot;{名称}&quot;&gt;
+            &lt;PARAM NAME=&quot;Local&quot; VALUE=&quot;{HTML文件}&quot;&gt;
+            &lt;PARAM NAME=&quot;ImageNumber&quot; value=&quot;{图标}&quot;&gt;
+            &lt;/OBJECT&gt; 的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_Declaration">
+             <summary>
+               查找类似 &lt;table&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;{0}&lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;&lt;pre&gt;{1}&lt;/pre&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+             的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_Example_Code">
+             <summary>
+               查找类似 &lt;div class=&quot;code&quot;&gt;
+                &lt;span&gt;
+                    &lt;table width=&quot;100%&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+                        &lt;tr&gt;
+                            &lt;th&gt;
+                                {Language}
+                            &lt;/th&gt;
+                            &lt;th&gt;
+                            &lt;/th&gt;
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td colspan=&quot;2&quot;&gt;
+                                &lt;pre&gt;{Code}&lt;/pre&gt;
+                            &lt;/td&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;br/&gt;
+             的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_Example_Description">
+            <summary>
+              查找类似 &lt;p&gt;{Example}&lt;/p&gt;
+            的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_ExceptionTable">
+             <summary>
+               查找类似 &lt;table cellspacing=&quot;2&quot; cellpadding=&quot;5&quot; width=&quot;100%&quot;&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;th align=&quot;left&quot;&gt;
+                            异常类型&lt;/th&gt;
+                        &lt;th align=&quot;left&quot;&gt;
+                            条件&lt;/th&gt;
+                    &lt;/tr&gt;
+                    {AllRows}
+                &lt;/tbody&gt;
+            &lt;/table&gt;
+             的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_ExceptionTable_Row">
+             <summary>
+               查找类似 &lt;tr valign=&quot;top&quot;&gt;
+                &lt;td&gt;
+                    {Col1}
+                &lt;/td&gt;
+                &lt;td&gt;
+                    {Col2}
+                &lt;/td&gt;
+            &lt;/tr&gt; 的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_Img">
+            <summary>
+              查找类似 &lt;img alt=&quot;{文本}&quot; src=&quot;files\{图片}&quot;&gt;&lt;/img&gt; 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_Page">
+             <summary>
+               查找类似 &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+            &lt;html dir=&quot;ltr&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns:ddue=&quot;http://ddue.schemas.microsoft.com/authoring/2003/5&quot;
+                xmlns:mshelp=&quot;http://msdn.microsoft.com/mshelp&quot;&gt;
+            &lt;head&gt;
+                &lt;title&gt;{Title}&lt;/title&gt;
+                &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset={Encoding}&quot; &gt;
+                &lt;meta content=&quot;history&quot; name=&quot;save&quot;&gt;
+               
+                &lt;link href=&quot;files/Classic.css&quot;
+                    type=&quot;text/css&quot; rel=&quot;stylesheet&quot;/&gt;
+                &lt;link href=&quot;files/HxLink [字符串的其余部分被截断]&quot;; 的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_Param">
+             <summary>
+               查找类似 &lt;span class=&quot;parameter&quot;&gt;&lt;b&gt;{0}&lt;/b&gt;&lt;/span&gt;
+            &lt;p&gt;{1}&lt;/p&gt;
+            &lt;br /&gt; 的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_ParamsBlock">
+             <summary>
+               查找类似 &lt;h4 class=&quot;subHeading&quot;&gt;{0}&lt;/h4&gt;
+            &lt;br/&gt;
+            &lt;pre&gt;{1}&lt;/pre&gt; 的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_Remarks">
+            <summary>
+              查找类似 &lt;p&gt;{0}&lt;/p&gt; 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_Section">
+             <summary>
+               查找类似 &lt;a name=&quot;{ID}&quot;&gt;&lt;/a&gt;
+            &lt;h1 class=&quot;heading&quot;&gt;
+                &lt;span onkeypress=&quot;ExpandCollapse_CheckKey({ID}Toggle)&quot; style=&quot;cursor: default&quot; onclick=&quot;ExpandCollapse({ID}Toggle)&quot;
+                    tabindex=&quot;0&quot;&gt;
+                    &lt;img class=&quot;toggle&quot; id=&quot;{ID}Toggle&quot; alt=&quot;Expand&quot; src=&quot;files\Expand.gif&quot; onload=&quot;OnLoadImage()&quot;
+                        name=&quot;toggleSwitch&quot;&gt;&lt;/img&gt;{Title}&lt;/span&gt;&lt;/h1&gt;
+            &lt;div class=&quot;section&quot; id=&quot;{ID}Section&quot; style=&quot;display: none&quot; name=&quot;collapseableSection&quot;&gt;
+                {Content}
+            &lt;/div&gt;
+             的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_TypeTable">
+            <summary>
+              查找类似 &lt;table class=&quot;memberListTable&quot; cellspacing=&quot;2&quot; cellpadding=&quot;5&quot; width=&quot;100%&quot;&gt;
+               &lt;colgroup&gt;
+                   &lt;col width=&quot;2%&quot;&gt;
+                   &lt;col width=&quot;38%&quot;&gt;
+                   &lt;col width=&quot;60%&quot;&gt;
+                   &lt;tbody&gt;
+                       &lt;tr&gt;
+                           &lt;th&gt;
+                               &amp;nbsp;&lt;/th&gt;
+                           &lt;th style=&quot;border-right-style: none&quot; align=&quot;left&quot;&gt;
+                               {Column1}&lt;/th&gt;
+                           &lt;th style=&quot;border-left-style: none&quot; align=&quot;left&quot;&gt;
+                               {Desc}&lt;/th&gt;
+                       &lt;/tr&gt;
+                       {AllRows}
+              [字符串的其余部分被截断]&quot;; 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_TypeTable_en_US">
+            <summary>
+              查找类似 &lt;table class=&quot;memberListTable&quot; cellspacing=&quot;2&quot; cellpadding=&quot;5&quot; width=&quot;100%&quot;&gt;
+               &lt;colgroup&gt;
+                   &lt;col width=&quot;2%&quot;&gt;
+                   &lt;col width=&quot;38%&quot;&gt;
+                   &lt;col width=&quot;60%&quot;&gt;
+                   &lt;tbody&gt;
+                       &lt;tr&gt;
+                           &lt;th&gt;
+                               &amp;nbsp;&lt;/th&gt;
+                           &lt;th style=&quot;border-right-style: none&quot; align=&quot;left&quot;&gt;
+                               {Column1}&lt;/th&gt;
+                           &lt;th style=&quot;border-left-style: none&quot; align=&quot;left&quot;&gt;
+                               Description&lt;/th&gt;
+                       &lt;/tr&gt;
+                       {AllRows [字符串的其余部分被截断]&quot;; 的本地化字符串。
+            </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.Temp_TypeTable_Row">
+             <summary>
+               查找类似 &lt;tr valign=&quot;top&quot;&gt;
+                &lt;td&gt;{0}&lt;/td&gt;
+                &lt;td&gt;&lt;a href=&quot;{1}&quot;&gt;{2}&lt;/a&gt;&lt;/td&gt;
+                &lt;td&gt;{3}&lt;/td&gt;
+            &lt;/tr&gt;  的本地化字符串。
+             </summary>
+        </member>
+        <member name="P:ADB.Factories.Templates.UL">
+             <summary>
+               查找类似 &lt;UL&gt;
+            {LI}
+            &lt;/UL&gt; 的本地化字符串。
+             </summary>
+        </member>
+        <member name="T:ADB.Factories.HtmlText">
+            <summary>
+            表示html页面中的文本，提供自动转换特殊字符的方法
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.HtmlText.#ctor">
+            <summary>
+            初始化HtmlText实例
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.HtmlText.#ctor(System.String)">
+            <summary>
+            用指定的文本初始化HtmlText实例
+            </summary>
+            <param name="text">用于初始化HtmlText实例的字符串</param>
+        </member>
+        <member name="M:ADB.Factories.HtmlText.Append(System.String)">
+            <summary>
+            添加文本，并转换特殊字符
+            </summary>
+            <param name="text">要添加的文本</param>
+        </member>
+        <member name="M:ADB.Factories.HtmlText.AppendPre(System.String)">
+            <summary>
+            添加文本，不转换特殊字符
+            </summary>
+            <param name="text">要添加的文本</param>
+        </member>
+        <member name="M:ADB.Factories.HtmlText.AppendParagraphAndTrim(System.String)">
+            <summary>
+            添加文本，转换特殊字符，消除上下空行和左空白
+            </summary>
+            <param name="para">要追加的文本</param>
+        </member>
+        <member name="M:ADB.Factories.HtmlText.AppendParagraphAndTrim(System.String,System.Int32)">
+            <summary>
+            添加文本，转换特殊字符，消除上下空行和左空白
+            </summary>
+            <param name="para">要追加的文本</param>
+            <param name="trimLength">消除左空白的长度</param>
+        </member>
+        <member name="M:ADB.Factories.HtmlText.ToString">
+            <summary>
+            将该转换成对应的字符串
+            </summary>
+            <returns>一个字符串，表示该实例对应的字符串</returns>
+        </member>
+        <member name="P:ADB.Factories.HtmlText.Length">
+            <summary>
+            获取此实例的长度。
+            </summary>
+        </member>
+        <member name="M:ADB.Factories.HtmlText.TrimParagraph(System.String,System.Int32)">
+            <summary>
+            转换指定文本特殊字符，并消除上下空行和左空白
+            </summary>
+            <param name="para">待转换的字符串</param>
+            <param name="trimLength">消除左空白的长度</param>
+            <returns>转换后的字符串</returns>
+        </member>
+        <member name="M:ADB.Factories.HtmlText.HtmlFormat(System.String)">
+            <summary>
+            转换指定文本中的特殊字符
+            </summary>
+            <param name="text">待转换的字符串</param>
+            <returns>转换后的字符串</returns>
+        </member>
+        <member name="T:ADB.Factories.TextTemplate">
+            <summary>
+            表示一个文本模板，该类使用一个字符串作为模板，通过将模板中的标志替换为对应的值（模板中的标志用 {标志名} 表示）生成新的文本
+            </summary>
+            <example>以下代码用文本模板生成IMG标志
+            <code>
+            static class Program
+            {
+                [STAThread]
+                static void Main()
+                {
+                    TextTemplate temp = new TextTemplate("&lt;img src='{src}' alt='{alt}' /&gt;");
+                    Console.WriteLine(temp.Render("pic.bmp","Image"));
+                    Hashtable values = new Hashtable();
+                    values.Add("src", "pic.bmp");
+                    values.Add("alt", "image");
+                    Console.WriteLine(temp.Render(values));
+                }
+            }
+            
+            输出为：
+            &lt;img src='pic.bmp' alt='Image' /&gt;
+            &lt;img src='pic.bmp' alt='image' /&gt;
+            
+            </code>
+            </example>
+        </member>
+        <member name="M:ADB.Factories.TextTemplate.#ctor(System.String)">
+            <summary>
+            用指定的模板初始化TextTemplate
+            </summary>
+            <param name="content">模板内容</param>
+        </member>
+        <member name="M:ADB.Factories.TextTemplate.#ctor(System.String,System.Text.Encoding)">
+            <summary>
+            用指定的模板初始化TextTemplate,模板内容重文件读入
+            </summary>
+            <param name="file">模板文件位置</param>
+            <param name="encoding">文件使用的编码</param>
+        </member>
+        <member name="M:ADB.Factories.TextTemplate.Render(System.Collections.Hashtable)">
+            <summary>
+            用指定的值生成文本
+            </summary>
+            <param name="values">各标志对应的值（用标志名作为key）</param>
+            <returns>生成的文本</returns>
+            <example>以下代码用文本模板生成IMG标志
+            <code>
+            static class Program
+            {
+                [STAThread]
+                static void Main()
+                {
+                    TextTemplate temp = new TextTemplate("&lt;img src='{src}' alt='{alt}' /&gt;");
+                    Console.WriteLine(temp.Render("pic.bmp","Image"));
+                    Hashtable values = new Hashtable();
+                    values.Add("src", "pic.bmp");
+                    values.Add("alt", "image");
+                    Console.WriteLine(temp.Render(values));
+                }
+            }
+            
+            输出为：
+            &lt;img src='pic.bmp' alt='Image' /&gt;
+            &lt;img src='pic.bmp' alt='image' /&gt;
+            
+            </code>
+            </example>
+        </member>
+        <member name="M:ADB.Factories.TextTemplate.Render(System.Object[])">
+            <summary>
+            用指定的值生成文本
+            </summary>
+            <param name="args">各标志对应的值(忽略标志名，第一个标志对应第一个参数，以此类推)</param>
+            <returns>生成的文本</returns>
+            <example>以下代码用文本模板生成IMG标志
+            <code>
+            static class Program
+            {
+                [STAThread]
+                static void Main()
+                {
+                    TextTemplate temp = new TextTemplate("&lt;img src='{src}' alt='{alt}' /&gt;");
+                    Console.WriteLine(temp.Render("pic.bmp","Image"));
+                    Hashtable values = new Hashtable();
+                    values.Add("src", "pic.bmp");
+                    values.Add("alt", "image");
+                    Console.WriteLine(temp.Render(values));
+                }
+            }
+            
+            输出为：
+            &lt;img src='pic.bmp' alt='Image' /&gt;
+            &lt;img src='pic.bmp' alt='image' /&gt;
+            
+            </code>
+            </example>
+        </member>
+        <member name="M:ADB.Factories.TextTemplate.SaveAs(System.String,System.Text.Encoding,System.Collections.Hashtable)">
+            <summary>
+            用指定的值生成文本，并保存到文件中
+            </summary>
+            <param name="file">要保存的文件路径</param>
+            <param name="encoding">文件的编码</param>
+            <param name="values">各标志对应的值（用标志名作为key）</param>
+        </member>
+        <member name="M:ADB.Factories.TextTemplate.SaveAs(System.String,System.Text.Encoding,System.Object[])">
+            <summary>
+            用指定的值生成文本，并保存到文件中
+            </summary>
+            <param name="file">要保存的文件路径</param>
+            <param name="encoding">文件的编码</param>
+            <param name="args">各标志对应的值(忽略标志名，第一个标志对应第一个参数，以此类推)</param>
+        </member>
+        <member name="M:ADB.Factories.TextTemplate.Split(System.String)">
+            <summary>
+            将模板以指定的分隔标志分隔成小模板
+            </summary>
+            <param name="splitTag"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
