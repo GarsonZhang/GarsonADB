@@ -1,0 +1,132 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using ADB.Factories;
+
+namespace {RootNamespace}
+{
+	/*	 
+	The following are the properties defined by the base class:
+	DataProvider	Get a IGetData interface that is used to get data for generating document 
+					such as members of the assambly and their xml comment.
+	IInteract		Get a IInteract interface thar is used to interact with main form
+ 
+	The following are some utility method
+	DocumentBuilderUtility.GetMemberID			Get the object ID
+	DocumentBuilderUtility.GetTypeDefinition	Get the object definition
+	
+	Get more information from ADB document.
+	*/
+	
+	public class {CustomBuilderName} : DocumentBuilder
+	{
+		public {CustomBuilderName}(IGetData data, IInteract interact)
+			: base(data, interact)
+		{
+		}
+
+		/// <summary>
+		/// Generate document
+		/// </summary>
+		/// <param name="title">Title of document</param>
+		/// <param name="target">Full path of target document</param>
+		public override void Build(string title, string target)
+		{
+			//TODO:add code of building document
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public override string Filter
+		{
+			get { return "|*.ext"; }
+		}
+	}
+
+
+	#region The follow is a custom builder used to build text document
+
+	/*
+	using System.Reflection;
+	using System.Xml;
+	using System.IO;
+	using System.Diagnostics;
+	
+	public class {CustomBuilderName} : DocumentBuilder
+	{
+		public {CustomBuilderName}(IGetData data, IInteract interact)
+			: base(data, interact)
+		{
+		}
+
+		private string GetSummary(MemberInfo info)
+		{
+			MemberXmlElement xmldata = DataProvider.GetMemberXmlNode(info);
+			if (xmldata != null)
+			{
+				XmlNodeList xnl = xmldata.Data.GetElementsByTagName("summary");
+				if (xnl.Count > 0)
+				{
+					return xnl[0].InnerText;
+				}
+				else
+					return string.Empty;
+			}
+			else
+				return string.Empty;
+		}
+
+		public override void Build(string title, string target)
+		{
+			StreamWriter sw = new StreamWriter(target, false, Encoding.GetEncoding("GBK"));
+			try
+			{
+				sw.Write("-----------------------------------------------------\r\n");
+
+				//use DataProvider.GetTypes() to get all type such class,interface ect.
+				foreach (DocumentBuilderMember typeMember in DataProvider.GetTypes())
+				{
+					if (typeMember.Selected)//Selected indicate whether the type is selected or not
+					{
+						sw.Write((typeMember.MemberInfo as Type).FullName);
+						sw.Write(":");
+						sw.Write(GetSummary(typeMember.MemberInfo));//get summary of the type
+						sw.Write("\r\n");
+
+						//use DataProvider.GetTypes() to get all members of type
+						DocumentBuilderMember[] typeMembers = DataProvider.GetTypeMembers(typeMember.MemberInfo as Type);
+						foreach (DocumentBuilderMember member in typeMembers)
+						{
+							if (member.Selected)//Selected indicate whether the member is selected or not
+							{
+								sw.Write("    ");
+								sw.Write(member.MemberInfo.Name);
+								sw.Write(":");
+								sw.Write(GetSummary(member.MemberInfo));//get summary of the member
+								sw.Write("\r\n");
+							}
+						}
+						sw.Write("-----------------------------------------------------\r\n");
+					}
+				}
+				Process.Start(target);
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+			finally
+			{
+				sw.Close();
+			}
+		}
+
+		public override string Filter
+		{
+			get { return "txt file|*.txt"; }
+		}
+	}
+	*/
+	#endregion
+}

@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using ADB.Factories;
+
+namespace {RootNamespace}
+{
+	/*
+	The following are the methods defined by the base class:
+	GetAllNamespaces		Get all namesapces
+	GetFileName				Get file name of the object(type or member)
+	GetNamespaceFileName	Get file name of the namespace
+	
+	The following are the properties defined by the base class:
+	DataProvider	Get a IGetData interface that is used to get data for generating document 
+					such as members of the assambly and their xml comment.
+	IInteract		Get a IInteract interface thar is used to interact with main form
+ 
+	The following are some utility method
+	DocumentBuilderUtility.GetMemberID			Get the object ID
+	DocumentBuilderUtility.GetTypeDefinition	Get the object definition
+	
+	Get more information from ADB document.
+	*/
+	
+	public class {CustomBuilderName} : ADB.Factories.CHMDocumentBuilderFactory
+	{
+        public {CustomBuilderName}(IGetData data, IInteract interact)
+            : base(data, interact)
+        {
+        }
+
+		/// <summary>
+		/// Create namespace page
+		/// </summary>
+		/// <param name="typeItems">a interface that is used to get all types of namespace</param>
+		/// <param name="ns">information of the namespace</param>
+		protected override void CreateNamespacePage(IGetTypes typeItems, ContentTreeItem ns)
+		{
+			//TODO:add code to create namespace page
+		}
+
+		/// <summary>
+		/// Create type page
+		/// </summary>
+		/// <param name="memberItems">a interface that is used to get all members of the type</param>
+		/// <param name="type">information of the type</param>
+		protected override void CreateTypePage(IGetMembers memberItems, ContentTreeItem type)
+		{
+			//TODO:add code to create type page
+		}
+
+		/// <summary>
+		/// Create member page
+		/// </summary>
+		/// <param name="member">infomation of member</param>
+		protected override void CreateMemberPage(ContentTreeItem member)
+		{
+			//TODO:add code to create member page
+		}
+	}
+}

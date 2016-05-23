@@ -1,0 +1,13 @@
+﻿[OPTIONS]
+Compatibility=1.1 Or later
+Compiled file={CHM文件}
+Default window=Main
+Default topic={默认}
+Contents file={HHC}
+Display compile progress=Yes
+Full-text search=Yes
+
+[WINDOWS]
+Main="{标题}","{HHC}",,"{默认}","{主页}",,,,,0x420,0xB4,0x10304E,[80,60,720,540],0x0,0x0,,,,,0
+
+[FILES]{Files}

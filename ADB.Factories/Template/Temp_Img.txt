@@ -1,0 +1,1 @@
+<img alt="{文本}" src="files\{图片}"></img>

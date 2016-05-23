@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="E" xml:space="preserve">
+    <value>E_</value>
+  </data>
+  <data name="Extension" xml:space="preserve">
+    <value>.html</value>
+  </data>
+  <data name="F" xml:space="preserve">
+    <value>F_</value>
+  </data>
+  <data name="M" xml:space="preserve">
+    <value>M_</value>
+  </data>
+  <data name="P" xml:space="preserve">
+    <value>P_</value>
+  </data>
+  <data name="strAlterDoc" xml:space="preserve">
+    <value>修改文档.html</value>
+  </data>
+  <data name="strCanceled" xml:space="preserve">
+    <value>生成已取消！</value>
+  </data>
+  <data name="strClass" xml:space="preserve">
+    <value>类</value>
+  </data>
+  <data name="strCollapseAll" xml:space="preserve">
+    <value>全部折叠</value>
+  </data>
+  <data name="strConstructor" xml:space="preserve">
+    <value>构造函数</value>
+  </data>
+  <data name="strDefault" xml:space="preserve">
+    <value>CHM文档(默认)</value>
+  </data>
+  <data name="strDelegate" xml:space="preserve">
+    <value>委托</value>
+  </data>
+  <data name="strDesc" xml:space="preserve">
+    <value>说明</value>
+  </data>
+  <data name="strEnumeration" xml:space="preserve">
+    <value>枚举</value>
+  </data>
+  <data name="strError" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="strEvent" xml:space="preserve">
+    <value>事件</value>
+  </data>
+  <data name="strExpandAll" xml:space="preserve">
+    <value>全部展开</value>
+  </data>
+  <data name="strField" xml:space="preserve">
+    <value>字段</value>
+  </data>
+  <data name="strHTMLOnly" xml:space="preserve">
+    <value>没有生成CHM文件，HTML页面文件和CHM工程文件已保存到
+{0}中！</value>
+  </data>
+  <data name="strIndex" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value>Templates</value>
+  </data>
+  <data name="String01" xml:space="preserve">
+    <value>公共类型</value>
+  </data>
+  <data name="String02" xml:space="preserve">
+    <value>非公共类型</value>
+  </data>
+  <data name="String03" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="String04" xml:space="preserve">
+    <value>继承的成员</value>
+  </data>
+  <data name="String05" xml:space="preserve">
+    <value>成员</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>另一个Build操作正在进行</value>
+  </data>
+  <data name="String16" xml:space="preserve">
+    <value>程序集</value>
+  </data>
+  <data name="String17" xml:space="preserve">
+    <value>程序集(*.dll,*.exe)|*.dll;*.exe</value>
+  </data>
+  <data name="String18" xml:space="preserve">
+    <value>XML文件(*.xml)|*.xml</value>
+  </data>
+  <data name="String19" xml:space="preserve">
+    <value>确定要删除程序集</value>
+  </data>
+  <data name="String20" xml:space="preserve">
+    <value>提示</value>
+  </data>
+  <data name="String21" xml:space="preserve">
+    <value>所有程序集</value>
+  </data>
+  <data name="String22" xml:space="preserve">
+    <value>所有类型</value>
+  </data>
+  <data name="String23" xml:space="preserve">
+    <value>文档生成</value>
+  </data>
+  <data name="String24" xml:space="preserve">
+    <value>快速选择</value>
+  </data>
+  <data name="String25" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="String26" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="String27" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="String28" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="String29" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="String30" xml:space="preserve">
+    <value>生成类型</value>
+  </data>
+  <data name="String31" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="String32" xml:space="preserve">
+    <value>程序集</value>
+  </data>
+  <data name="String33" xml:space="preserve">
+    <value>XML文档</value>
+  </data>
+  <data name="String34" xml:space="preserve">
+    <value>生成文档</value>
+  </data>
+  <data name="String35" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="String36" xml:space="preserve">
+    <value>快速选择</value>
+  </data>
+  <data name="String42" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="String43" xml:space="preserve">
+    <value>示例</value>
+  </data>
+  <data name="String44" xml:space="preserve">
+    <value>语法</value>
+  </data>
+  <data name="String45" xml:space="preserve">
+    <value>异常</value>
+  </data>
+  <data name="String46" xml:space="preserve">
+    <value>参数</value>
+  </data>
+  <data name="String47" xml:space="preserve">
+    <value>返回值</value>
+  </data>
+  <data name="String48" xml:space="preserve">
+    <value>属性值</value>
+  </data>
+  <data name="String49" xml:space="preserve">
+    <value>重启后生效！</value>
+  </data>
+  <data name="String50" xml:space="preserve">
+    <value>是否打开文件？</value>
+  </data>
+  <data name="String51" xml:space="preserve">
+    <value>请输入标题？</value>
+  </data>
+  <data name="String52" xml:space="preserve">
+    <value>程序集已添加！</value>
+  </data>
+  <data name="String53" xml:space="preserve">
+    <value>XML文件已添加！</value>
+  </data>
+  <data name="String55" xml:space="preserve">
+    <value>你确定要取消？</value>
+  </data>
+  <data name="String56" xml:space="preserve">
+    <value>(从{0}继承)</value>
+  </data>
+  <data name="strInterface" xml:space="preserve">
+    <value>接口</value>
+  </data>
+  <data name="strMethod" xml:space="preserve">
+    <value>方法</value>
+  </data>
+  <data name="strNamespace" xml:space="preserve">
+    <value>命名空间</value>
+  </data>
+  <data name="strNoCHM" xml:space="preserve">
+    <value>不编译CHM文件</value>
+  </data>
+  <data name="strPic" xml:space="preserve">
+    <value>图片</value>
+  </data>
+  <data name="strPrivateField" xml:space="preserve">
+    <value>私有字段</value>
+  </data>
+  <data name="strPrivateMethod" xml:space="preserve">
+    <value>私有方法</value>
+  </data>
+  <data name="strPrivateProperty" xml:space="preserve">
+    <value>私有属性</value>
+  </data>
+  <data name="strProperty" xml:space="preserve">
+    <value>属性</value>
+  </data>
+  <data name="strProtectedField" xml:space="preserve">
+    <value>受保护字段</value>
+  </data>
+  <data name="strProtectedMethod" xml:space="preserve">
+    <value>受保护方法</value>
+  </data>
+  <data name="strProtectedProperty" xml:space="preserve">
+    <value>受保护属性</value>
+  </data>
+  <data name="strPublicField" xml:space="preserve">
+    <value>公共字段</value>
+  </data>
+  <data name="strPublicMethod" xml:space="preserve">
+    <value>公共方法</value>
+  </data>
+  <data name="strPublicProperty" xml:space="preserve">
+    <value>公共属性</value>
+  </data>
+  <data name="strStructure" xml:space="preserve">
+    <value>结构</value>
+  </data>
+  <data name="strTip" xml:space="preserve">
+    <value>提示</value>
+  </data>
+  <data name="strTip1" xml:space="preserve">
+    <value>请输入路径！</value>
+  </data>
+  <data name="T" xml:space="preserve">
+    <value>T_</value>
+  </data>
+</root>

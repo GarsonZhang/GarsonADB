@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>{0}</title>
+    <style type="text/css">
+    p
+    {
+    text-indent: 2pc;
+    font-family: 'Times New Roman';
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            .NET文档生成器已经为您生成CHM文档，文档的所有页面及打包CHM文档需要的HHP和HHC文件均保存在pages文件夹中，修改页面后，可以执行以下命令重新打包成CHM文档。</p>
+        <p>
+            <span style="background-color: #cccccc;">hhc.exe pages\temp.hhp</span></p>
+        <p>
+            注意：</p>
+        <p>
+            1.hhc.exe的路径通常为C:\Program Files\HTML Help Workshop\hhc.exe；</p>
+        <p>
+            2.打包成CHM文档前，请用记事本打开pages\temp.hhp，将Compiled file的值修改为目标CHM文件的路径。</p>
+        <p>
+            {1} 包括以下命名空间，您可以过以下链接找到要修改的页面：</p>
+        {2}
+        <br />
+        <br />
+        <p style="font-weight: bold; color: #ff0000;"><span></span>
+            提示：建议使用SuperCHM工具打开pages\temp.hhp文件进行修改
+        </p>
+    </div>
+</body>
+</html>

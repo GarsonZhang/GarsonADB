@@ -1,0 +1,147 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using ADB.Factories;
+
+namespace {RootNamespace}
+{
+	/*
+	The following are the methods defined by the base class:
+	GetElementBeginTag	Get begin tag of the element
+	GetElementEndTag	Get end tag of the element
+	GetInnerTags		Convert XML to HTML showing in the page
+	GetAllNamespaces		Get all namesapces
+	GetFileName				Get file name of the object(type or member)
+	GetNamespaceFileName	Get file name of the namespace
+
+	The following are the properties defined by the base class:	
+	Target				Get full path of target document
+	Title				Title of the target document
+	HtmlTempDirectory	The full path of the folder that is used to cache the page file
+	DataProvider		Get a IGetData interface that is used to get data for generating document 
+						such as members of the assambly and their xml comment.
+	IInteract			Get a IInteract interface thar is used to interact with main form
+ 
+	The following are some utility method
+	DocumentBuilderUtility.GetMemberID			Get the object ID
+	DocumentBuilderUtility.GetTypeDefinition	Get the object definition
+	
+	Get more information from ADB document.
+	*/
+	
+	/// <summary>
+	/// {CustomBuilderName}
+	/// </summary>
+	public class {CustomBuilderName} : ADB.Factories.MSDNStyleCHMDocumentBuilder
+	{
+		public {CustomBuilderName}(IGetData data, IInteract interact)
+			: base(data, interact)
+		{
+		}
+		
+		public override PageSection[] MemberPageSections
+		{
+			get
+			{
+				return base.MemberPageSections;
+			}
+		}
+		
+		public override PageSection[] TypePageSections
+		{
+			get
+			{
+				return base.TypePageSections;
+			}
+		}
+		
+		protected override string GetTag(System.Xml.XmlElement elem, string xmlFile)
+		{
+			switch (elem.Name)
+			{
+			case "tag":
+				{
+					return "";
+				}
+			default:
+				{
+					return base.GetTag(elem, xmlFile);
+				}
+			}
+		}
+	}
+
+	#region the following is a custom builder that extending <img> tag to insert image,it also extends a "TEST" section in type page and member page
+	/*
+	
+	public class DemoCustomBuilder : ADB.Factories.MSDNStyleCHMDocumentBuilder
+	{		
+		static PageSection[] _memberPageSections, _typePageSections;
+		
+		public DemoCustomBuilder(IGetData data, IInteract interact)
+			: base(data, interact)
+		{
+			_memberPageSections = new PageSection[base.MemberPageSections.Length + 1];
+			base.MemberPageSections.CopyTo(_memberPageSections, 0);
+			_memberPageSections[base.MemberPageSections.Length] = new PageSection("TEST", PageSectionType.FromXML, "test");
+			
+			_typePageSections = new PageSection[base.TypePageSections.Length + 1];
+			base.TypePageSections.CopyTo(_typePageSections, 0);
+			_typePageSections[base.TypePageSections.Length] = new PageSection("TEST", PageSectionType.FromXML, "test");
+		}
+
+		public override PageSection[] MemberPageSections
+		{
+			get
+			{
+				return _memberPageSections;
+			}
+		}
+
+		public override PageSection[] TypePageSections
+		{
+			get
+			{
+				return _typePageSections;
+			}
+		}
+
+		protected override string GetTag(System.Xml.XmlElement elem, string xmlFile)
+		{
+			switch (elem.Name)
+			{
+			case "test":
+				{
+					//Generate content of test tag
+					return GetInnerTags(elem, xmlFile);
+				}
+			case "image":
+				{
+					StringBuilder tag = new StringBuilder();
+					string src = elem.GetAttribute("src");
+					if (!string.IsNullOrEmpty(src))
+					{
+						try
+						{
+							//Copy the image to the folder that is used to cache page file.
+							FileSystem.CopyFile(xmlFile + "\\" + src, HtmlFileDirectory + "\\" + src, true);
+						}
+						finally
+						{
+						}
+						//Generate HTML tag
+						tag.AppendFormat("<img src='{0}'/>", src);
+					}
+					return tag.ToString();
+				}
+			default:
+				{
+					return base.GetTag(elem, xmlFile);
+				}
+			}
+		}
+	}
+	*/
+
+	#endregion
+}

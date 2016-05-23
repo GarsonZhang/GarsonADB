@@ -1,0 +1,10 @@
+<table>
+    <tbody>
+        <tr>
+            <th>{0}</th>
+        </tr>
+        <tr>
+            <td><pre>{1}</pre></td>
+        </tr>
+    </tbody>
+</table>

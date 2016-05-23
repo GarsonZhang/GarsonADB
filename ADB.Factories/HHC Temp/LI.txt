@@ -1,0 +1,4 @@
+<LI><OBJECT TYPE="text/sitemap">
+<PARAM NAME="Name" VALUE="{名称}">
+<PARAM NAME="ImageNumber" value="{图标}">
+</OBJECT>

@@ -1,0 +1,8 @@
+<tr valign="top">
+    <td>
+        {Col1}
+    </td>
+    <td>
+        {Col2}
+    </td>
+</tr>

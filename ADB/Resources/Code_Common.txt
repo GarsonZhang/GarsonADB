@@ -1,0 +1,131 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using ADB.Factories;
+
+namespace {RootNamespace}
+{
+	/*	 
+	以下公共（或受保护）属性是由基类定义的，编写自定义文档生成器可能需要
+	DataProvider	获取一个IGetData接口，用于获取生成文档所需的数据（如：程序集的成员及其XML注释）
+	Interact		获取一个IInteract接口，用于同文档生成程序主窗口进行交互
+ 
+	通用方法:
+	DocumentBuilderUtility.GetMemberID			获取指定对象在XML文档注释中的ID字符串
+	DocumentBuilderUtility.GetTypeDefinition	获取一个类型的定义 
+	
+	具体用法参照ADB帮助文档
+	*/
+	
+	public class {CustomBuilderName} : DocumentBuilder
+	{
+		public {CustomBuilderName}(IGetData data, IInteract interact)
+			: base(data, interact)
+		{
+		}
+
+		/// <summary>
+		/// 生成文档
+		/// </summary>
+		/// <param name="title">文档标题</param>
+		/// <param name="target">输出文件路径</param>
+		public override void Build(string title, string target)
+		{
+			//TODO:在此处添加生成文档的代码
+		}
+
+		/// <summary>
+		/// 文件名筛选器字符串，该字符串决定对话框的“另存为文件类型”框中出现的选择内容
+		/// </summary>
+		public override string Filter
+		{
+			get { return "文本文件|*.txt"; }
+		}
+	}
+
+
+	#region 以下示例文档生成器生成文本模式的文档
+
+	/*
+	using System.Reflection;
+	using System.Xml;
+	using System.IO;
+	using System.Diagnostics;
+	
+	public class {CustomBuilderName} : DocumentBuilder
+	{
+		public {CustomBuilderName}(IGetData data, IInteract interact)
+			: base(data, interact)
+		{
+		}
+
+		private string GetSummary(MemberInfo info)
+		{
+			MemberXmlElement xmldata = DataProvider.GetMemberXmlNode(info);
+			if (xmldata != null)
+			{
+				XmlNodeList xnl = xmldata.Data.GetElementsByTagName("summary");
+				if (xnl.Count > 0)
+				{
+					return xnl[0].InnerText;
+				}
+				else
+					return string.Empty;
+			}
+			else
+				return string.Empty;
+		}
+
+		public override void Build(string title, string target)
+		{
+			StreamWriter sw = new StreamWriter(target, false, Encoding.GetEncoding("GBK"));
+			try
+			{
+				sw.Write("-----------------------------------------------------\r\n");
+
+				//使用DataProvider.GetTypes()获取所有的类型（类，接口，委托，结构，枚举）
+				foreach (DocumentBuilderMember typeMember in DataProvider.GetTypes())
+				{
+					if (typeMember.Selected)//Selected属性指明该类型是否选中
+					{
+						sw.Write((typeMember.MemberInfo as Type).FullName);
+						sw.Write(":");
+						sw.Write(GetSummary(typeMember.MemberInfo));//获取类型的摘要
+						sw.Write("\r\n");
+
+						//使用DataProvider.GetTypeMember获取类型的所有成员
+						DocumentBuilderMember[] typeMembers = DataProvider.GetTypeMembers(typeMember.MemberInfo as Type);
+						foreach (DocumentBuilderMember member in typeMembers)
+						{
+							if (member.Selected)//Selected属性指明该成员是否选中
+							{
+								sw.Write("    ");
+								sw.Write(member.MemberInfo.Name);
+								sw.Write(":");
+								sw.Write(GetSummary(member.MemberInfo));//获取成员的摘要
+								sw.Write("\r\n");
+							}
+						}
+						sw.Write("-----------------------------------------------------\r\n");
+					}
+				}
+				Process.Start(target);
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+			finally
+			{
+				sw.Close();
+			}
+		}
+
+		public override string Filter
+		{
+			get { return "文本文件|*.txt"; }
+		}
+	}
+	*/
+	#endregion
+}

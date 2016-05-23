@@ -1,0 +1,9 @@
+<a name="{ID}"></a>
+<h1 class="heading">
+    <span onkeypress="ExpandCollapse_CheckKey({ID}Toggle)" style="cursor: default" onclick="ExpandCollapse({ID}Toggle)"
+        tabindex="0">
+        <img class="toggle" id="{ID}Toggle" alt="Expand 图像" src="files\Expand.gif" onload="OnLoadImage()"
+            name="toggleSwitch"></img>{Title}</span></h1>
+<div class="section" id="{ID}Section" style="display: none" name="collapseableSection">
+    {Content}
+</div>

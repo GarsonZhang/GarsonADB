@@ -1,0 +1,19 @@
+<div class="code">
+    <span>
+        <table width="100%" cellspacing="0" cellpadding="0">
+            <tr>
+                <th>
+                    {Language}
+                </th>
+                <th>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <pre>{Code}</pre>
+                </td>
+            </tr>
+        </table>
+    </span>
+</div>
+<br/>

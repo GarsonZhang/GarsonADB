@@ -1,0 +1,11 @@
+<table cellspacing="2" cellpadding="5" width="100%">
+    <tbody>
+        <tr>
+            <th align="left">
+                异常类型</th>
+            <th align="left">
+                条件</th>
+        </tr>
+        {AllRows}
+    </tbody>
+</table>

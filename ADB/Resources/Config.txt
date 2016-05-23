@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+注意：
+1.CustomBuilder必须有Name和Entry两个属性(区分大小写),同一程序集内可以有多个文档生成器；
+2.Entry必须使用类的完全限定名（命名空间.类名）；
+3.&lt;?xml version="1.0" encoding="utf-8"?&gt;指定的编码必须和文件保存的编码一致。
+4.该配置文件的名称必须和包含生成器的程序集的名称一样（例如：程序集的名称为CustomBuilder.dll则配置文件应该命名为CustomBuilder.builder）
+-->
+<Builders ADBVersion="2.3.0.0">
+  <CustomBuilder Localizable="true"  Entry="{RootNamespace}.{CustomBuilderName}">
+    <Profile Language="zh-CHS" Name="{CustomBuilderDescption}"/>
+  </CustomBuilder>
+</Builders>

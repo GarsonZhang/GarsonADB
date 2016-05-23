@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="宋体" Size="9" />
+  <Class Name="ADB.Factories.BuildProgress" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BuildProgress.cs</FileName>
+      <HashCode>AEAAAAAQACAAABAAAACAAAAGAAA4AABAEHAAAAAACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.CHMDocumentBuilderFactory" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CHMDocumentBuilderFactory.cs</FileName>
+      <HashCode>4gAASDARVoIQhlAVoABAACIIQjAQkKAgAgAIAIARAQQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.ContentTreeItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CHMDocumentBuilderFactory.cs</FileName>
+      <HashCode>AAIAIABAAAAgAAUgAAAQQAQQAAAICCAAAAAgAEBCQQA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ADB.Factories.MemberItemInfoComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CHMDocumentBuilderFactory.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ADB.Factories.DocumentBuilder" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DocumentBuilder.cs</FileName>
+      <HashCode>AgAAAAAAAAAEAAAAAAAAAABAIBAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.DocumentBuilderMember" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DocumentBuilder.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAIAAAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.MemberXmlElement" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DocumentBuilder.cs</FileName>
+      <HashCode>AAAAgACABAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.DocumentBuilderUtility" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DocumentBuilder.cs</FileName>
+      <HashCode>AAAAAAAgIAIAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.CHMDocumentBuilderFactory_OptionDialog" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CHMDocumentBuilderFactory_OptionDialog.cs</FileName>
+      <HashCode>AAAAAAAAIKAAAAAAAgCAAAACAAAIAAAACEAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.GetHHCPathDialog" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GetHHCPathDialog.cs</FileName>
+      <HashCode>AAAAAAAAAiAAABAAAACAAAACAAAYAAAAEGAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.MSDNStyleCHMDocumentBuilder" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MSDNStyleCHMDocumentBuilder.cs</FileName>
+      <HashCode>ogQAAAIQABAQAhAAoAAAAAIIQgIRgICCAgAMAIAVABQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.SectionInfo" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MSDNStyleCHMDocumentBuilder.cs</FileName>
+      <HashCode>BAAAIAAAAoAAAEABAAAAAAQAAAAAAQAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.Templates" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAYQAAgAgAAAAAIDEGABEIAAAQAAQAAAAAAAQAIAQMg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.Properties.Resources" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASBQAFwIEIEACwgBSIChF4BAAwDga4H0AgGwEwJ8b4A=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ADB.Factories.Properties.Settings" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ADB.Factories.IGetTypes" Collapsed="true">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CHMDocumentBuilderFactory.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ADB.Factories.IGetMembers" Collapsed="true">
+    <Position X="4.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CHMDocumentBuilderFactory.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ADB.Factories.IGetData" Collapsed="true">
+    <Position X="3" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DocumentBuilder.cs</FileName>
+      <HashCode>AAEAACAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ADB.Factories.IInteract" Collapsed="true">
+    <Position X="8.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DocumentBuilder.cs</FileName>
+      <HashCode>AAAAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ADB.Factories.BuildMode" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CHMDocumentBuilderFactory_OptionDialog.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAIAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

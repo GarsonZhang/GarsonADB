@@ -1,0 +1,14 @@
+[OPTIONS]
+Compatibility=1.1 Or later
+Compiled file={CHM文件}
+Default window=Main
+Default font=宋体,9,1
+Contents file={HHC}
+Display compile progress=Yes
+Full-text search=Yes
+Language=0X804 中文(中国)
+
+[WINDOWS]
+Main="{标题}","{HHC}",,,,,,,,0x420,0xB4,0x10300E,[80,60,720,540],0x0,0x0,,,,,0
+
+[FILES]{Files}

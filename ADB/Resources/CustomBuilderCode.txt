@@ -1,0 +1,148 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using ADB.Factories;
+
+namespace {RootNamespace}
+{
+	/*
+	以下公共（或受保护）方法是由基类定义的，编写自定义文档生成器可能需要：	
+	GetElementBeginTag	获取XML元素的开始标志
+	GetElementEndTag	获取XML元素的结束标志
+	GetInnerTags		将XML注释所有子级转换成HTML	
+	GetAllNamespaces		获取所有的命名空间的名称
+	GetFileName				获取类型或成员的页面文件的文件名
+	GetNamespaceFileName	获取命名空间对应的页面文件的文件名 
+
+	以下公共（或受保护）属性是由基类定义的，编写自定义文档生成器可能需要：	
+	Target				目标文件路径
+	Title				文档标题 
+	HtmlTempDirectory	获取存放页面模板的文件夹的路径
+	DataProvider		获取一个IGetData接口，用于获取生成文档所需的数据（如：程序集的成员及其XML注释）
+	Interact			获取一个IInteract接口，用于同文档生成程序主窗口进行交互
+	
+	通用方法:
+	DocumentBuilderUtility.GetMemberID			获取指定对象在XML文档注释中的ID字符串
+	DocumentBuilderUtility.GetTypeDefinition	获取一个类型的定义 
+	
+	具体用法参照ADB帮助文档
+	*/
+	
+	/// <summary>
+	/// {CustomBuilderName}
+	/// </summary>
+	public class {CustomBuilderName} : ADB.Factories.MSDNStyleCHMDocumentBuilder
+	{
+		public {CustomBuilderName}(IGetData data, IInteract interact)
+			: base(data, interact)
+		{
+		}
+		
+		public override PageSection[] MemberPageSections
+		{
+			get
+			{
+				return base.MemberPageSections;
+			}
+		}
+		
+		public override PageSection[] TypePageSections
+		{
+			get
+			{
+				return base.TypePageSections;
+			}
+		}
+		
+		protected override string GetTag(System.Xml.XmlElement elem, string xmlFile)
+		{
+			switch (elem.Name)
+			{
+			case "扩展的XML标志":
+				{
+					return "";
+				}
+			default:
+				{
+					//其它标志由基类处理
+					return base.GetTag(elem, xmlFile);
+				}
+			}
+		}
+	}
+
+	#region 以下示例文档生成器扩展了image标志，并在成员页面和类型页面添加了一个名称为"测试"的节
+	/*
+	
+	public class DemoCustomBuilder : ADB.Factories.MSDNStyleCHMDocumentBuilder
+	{		
+		static PageSection[] _memberPageSections, _typePageSections;
+		
+		public DemoCustomBuilder(IGetData data, IInteract interact)
+			: base(data, interact)
+		{
+			_memberPageSections = new PageSection[base.MemberPageSections.Length + 1];
+			base.MemberPageSections.CopyTo(_memberPageSections, 0);
+			_memberPageSections[base.MemberPageSections.Length] = new PageSection("测试", PageSectionType.FromXML, "test");
+			
+			_typePageSections = new PageSection[base.TypePageSections.Length + 1];
+			base.TypePageSections.CopyTo(_typePageSections, 0);
+			_typePageSections[base.TypePageSections.Length] = new PageSection("测试", PageSectionType.FromXML, "test");
+		}
+
+		public override PageSection[] MemberPageSections
+		{
+			get
+			{
+				return _memberPageSections;
+			}
+		}
+
+		public override PageSection[] TypePageSections
+		{
+			get
+			{
+				return _typePageSections;
+			}
+		}
+
+		protected override string GetTag(System.Xml.XmlElement elem, string xmlFile)
+		{
+			switch (elem.Name)
+			{
+			case "test":
+				{
+					//生成"测试"节的内容
+					return GetInnerTags(elem, xmlFile);
+				}
+			case "image":
+				{
+					StringBuilder tag = new StringBuilder();
+					string src = elem.GetAttribute("src");
+					if (!string.IsNullOrEmpty(src))
+					{
+						try
+						{
+							//将图片拷贝到生成页面的目录中（通过属性HtmlFileDirectory获取保存页面的目录）
+							FileSystem.CopyFile(xmlFile + "\\" + src, HtmlFileDirectory + "\\" + src, true);
+						}
+						finally
+						{
+						}
+						//生成HTML标志
+						tag.AppendFormat("<img src='{0}'/>", src);
+					}
+					return tag.ToString();
+				}
+			default:
+				{
+					//其它标志由基类处理
+					return base.GetTag(elem, xmlFile);
+				}
+			}
+		}
+	}
+	*/
+
+	#endregion
+}

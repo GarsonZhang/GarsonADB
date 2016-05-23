@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using ADB.Factories;
+
+namespace {RootNamespace}
+{
+	/*
+	以下公共（或受保护）方法是由基类定义的，编写自定义文档生成器可能需要
+	GetAllNamespaces		获取所有的命名空间的名称
+	GetFileName				获取类型或成员的页面文件的文件名
+	GetNamespaceFileName	获取命名空间对应的页面文件的文件名 
+	
+	以下公共（或受保护）属性是由基类定义的，编写自定义文档生成器可能需要
+	DataProvider	获取一个IGetData接口，用于获取生成文档所需的数据（如：程序集的成员及其XML注释）
+	Interact		获取一个IInteract接口，用于同文档生成程序主窗口进行交互
+	
+	通用方法:
+	DocumentBuilderUtility.GetMemberID			获取指定对象在XML文档注释中的ID字符串
+	DocumentBuilderUtility.GetTypeDefinition	获取一个类型的定义
+	
+	具体用法参照ADB帮助文档 
+	*/
+	
+	public class {CustomBuilderName} : ADB.Factories.CHMDocumentBuilderFactory
+	{
+        public {CustomBuilderName}(IGetData data, IInteract interact)
+            : base(data, interact)
+        {
+        }
+
+		/// <summary>
+		/// 生成命名空间页面
+		/// </summary>
+		/// <param name="typeItems">命名空间中的所有类型</param>
+		/// <param name="ns">命名空间包含信息（名称，页面文件名等）</param>
+		protected override void CreateNamespacePage(IGetTypes typeItems, ContentTreeItem ns)
+		{
+			//TODO:在此处添加生成命名空间页面的代码
+		}
+
+		/// <summary>
+		/// 生成类型页面
+		/// </summary>
+		/// <param name="memberItems">该类型包含的所有成员</param>
+		/// <param name="type">类型包含信息（名称，页面文件名等）</param>
+		protected override void CreateTypePage(IGetMembers memberItems, ContentTreeItem type)
+		{
+			//TODO:在此处添加生成类型页面的代码
+		}
+
+		/// <summary>
+		/// 创建成员页面
+		/// </summary>
+		/// <param name="member">成员的信息</param>
+		protected override void CreateMemberPage(ContentTreeItem member)
+		{
+			//TODO:在此处添加生成成员(方法，属性或字段)页面的代码
+		}
+	}
+}

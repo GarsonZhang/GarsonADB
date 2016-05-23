@@ -1,0 +1,17 @@
+<table class="memberListTable" cellspacing="2" cellpadding="5" width="100%">
+    <colgroup>
+        <col width="2%">
+        <col width="38%">
+        <col width="60%">
+        <tbody>
+            <tr>
+                <th>
+                    &nbsp;</th>
+                <th style="border-right-style: none" align="left">
+                    {Column1}</th>
+                <th style="border-left-style: none" align="left">
+                    {Desc}</th>
+            </tr>
+            {AllRows}
+        </tbody>
+</table>

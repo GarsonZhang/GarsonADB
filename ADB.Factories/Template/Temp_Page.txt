@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html dir="ltr" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:mshelp="http://msdn.microsoft.com/mshelp">
+<head>
+    <title>{Title}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset={Encoding}" >
+    <meta content="history" name="save">
+   
+    <link href="files/Classic.css"
+        type="text/css" rel="stylesheet"/>
+    <link href="files/HxLink.css" type="text/css" rel="stylesheet"/>
+
+    <script src="files\script1.js">
+      
+    </script>
+
+    <script src="files\script2.js">
+      
+    </script>
+
+    <script src="files\script3.js">
+      
+    </script>
+
+    <script src="files\script4.js">
+      
+    </script>
+
+    <meta content="MSHTML 6.00.2900.3314" name="GENERATOR">
+</head>
+<body>
+    <input class="userDataStyle" id="userDataCache" type="hidden"> </input>
+    <input id="hiddenScrollOffset" type="hidden"> </input>
+    <img id="collapseImage" style="display: none; width: 0px; height: 0px" alt="Collapse {PIC}"
+        src="files\Collapse.gif"> </img>
+    <img id="expandImage" style="display: none; width: 0px; height: 0px" alt="Expand {PIC}"
+        src="files\Expand.gif"> </img>
+    <img id="collapseAllImage" style="display: none; width: 0px; height: 0px" alt="CollapseAll {PIC}"
+        src="files\CollapseAll.gif"> </img>
+    <img id="expandAllImage" style="display: none; width: 0px; height: 0px" alt="ExpandAll {PIC}"
+        src="files\ExpandAll.gif"> </img>
+    <div id="header">
+        <table id="topTable" width="100%">
+            <tbody>
+                <tr id="headerTableRow2">
+                    <td align="left">
+                        <span id="nsrTitle">{Title}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="bottomTable" cellspacing="0" cellpadding="0" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        <span onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage)" style="cursor: default"
+                            onclick="ExpandCollapseAll(toggleAllImage)" tabindex="0">
+                            <img class="toggleAll" id="toggleAllImage" alt="CollapseAll {PIC}" src="files\CollapseAll.gif">
+                            </img>
+                            <label id="collapseAllLabel" style="display: none" for="toggleAllImage">
+                                {CollapseAll}
+                            </label>
+                            <label id="expandAllLabel" style="display: none" for="toggleAllImage">
+                                {ExpandAll}
+                            </label>
+                            &nbsp;</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="mainSection">
+        <div id="mainBody">
+            <div class="saveHistory" id="allHistory" onload="loadAll()" onsave="saveAll()">
+            </div>
+            <font color="darkgray"></font>
+            <p>{Summary}</p>
+               {Content}
+        </div>
+    </div>
+</body>
+</html>
