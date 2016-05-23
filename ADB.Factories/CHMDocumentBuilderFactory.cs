@@ -89,6 +89,7 @@ namespace ADB.Factories
         }
 
 
+
         bool _isCanceled = false, _isFinish = false;
         Process _hhcProcess = null;
         AutoResetEvent _exitEvent = null;
