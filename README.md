@@ -1,5 +1,5 @@
 # GarsonADB
-更改自lucc的ADB，制作了一小部分修改<br />
+更改自lucc的ADB，只作了一小部分修改<br />
 原项目地址:http://www.cnblogs.com/lucc/archive/2008/09/01/1281085.html#!comments<br />
 感谢lucc的奉献精神<br />
 <br />
